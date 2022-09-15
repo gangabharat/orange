@@ -1,0 +1,21 @@
+<div class="modal-header clearfix">
+  <h4 class="modal-title float-left">Product Details</h4>
+  <button
+    type="button"
+    class="close float-right"
+    aria-label="Close"
+    (click)="onClose()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  {{ news }}
+  <div class="">
+    <p>{{ product.id }}</p>
+    <p>{{ product.name }}</p>
+    <p>{{ product.model }}</p>
+    <p>{{ product.number }}</p>
+    <p>{{ product.address }}</p>
+  </div>
+</div>

@@ -1,0 +1,178 @@
+<!-- <button class="btn btn-primary" (click)="onLoad()">Load</button>
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  [ngClass]="{ 'was-validated': form.submitted && form.invalid }"
+>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="" ngModelGroup="product">
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <label class="labels">Name</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="product name"
+              required
+              value=""
+              name="name"
+              [ngModel]="initialProduct.name"
+            />
+          </div>
+          <div class="col-md-6">
+            <label class="labels">Model</label
+            ><input
+              type="text"
+              class="form-control"
+              value=""
+              placeholder="model"
+              name="model"
+              [ngModel]="initialProduct.model"
+              required
+            />
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <label class="labels">Number</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="number"
+              value=""
+              name="number"
+              [ngModel]="initialProduct.number"
+              required
+            />
+          </div>
+          <div class="col-md-12">
+            <label class="labels">Address</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="enter address"
+              value=""
+              name="address"
+              [ngModel]="initialProduct.address"
+              required              
+            />
+          </div>
+        </div>
+        <div class="mt-5 text-center">
+          <button
+            class="btn btn-outline-success mr-2"
+            type="submit"
+            [disabled]="loading"
+          >
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span>
+
+            Save
+          </button>
+          <button class="btn btn-outline-secondary" type="reset">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form> -->
+
+<button class="btn btn-outline-primary" (click)="onAdd()">Add New</button>
+
+<!-- <div class="" *ngFor="let product of products$ | async">
+    {{product | json}}
+    <button class="btn btn-primary" (click)="onDetails(product)">Details</button>
+    <button class="btn btn-info" (click)="onEdit(product)">Edit</button>
+    <button class="btn btn-warning" (click)="onRemove(product)">delete</button>
+</div> -->
+
+<div class="row">
+  <!-- <div class="card-shadow card mb-1" *ngFor="let product of products$ | async">
+  <div class="row g-0"> 
+    <div class="col-md-12">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+       
+        <p class="card-text f-flex">
+          <button class="btn btn-primary mr-2" (click)="onDetails(product)">Details</button>
+          <button class="btn btn-info mr-2" (click)="onEdit(product)">Edit</button>
+          <button class="btn btn-danger" (click)="onRemove(product)">delete</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div> -->
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="header">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>
+          Action
+
+          <!-- Example split danger button -->
+          <!--<div class="btn-group">
+            <button type="button" class="btn btn-outline-danger">Action</button>
+            <button
+              type="button"
+              class="btn btn-outline-danger dropdown-toggle dropdown-toggle-split"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>-->
+
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let product of products$ | async"
+       
+      >
+        <td>{{ product.name }}</td>
+        <td>{{ product.model }}</td>
+        <td>{{ product.address }}</td>
+        <td>{{ product.number }}</td>
+        <td class="pull-right">
+          <p class="f-flex">
+            <button
+            class="btn btn-outline-primary mr-2"
+            (click)="onDetails(product)"
+          >
+            Details
+          </button>
+            <button
+              class="btn btn-outline-info mr-2"
+              (click)="onEdit(product); $event.stopPropagation()"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-outline-danger"
+              (click)="onRemove(product); $event.stopPropagation()"
+            >
+              Delete
+            </button>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,38 @@
+<a (click)="showModal(newModalTemplate)" class="text-info">
+    <fa-icon [icon]="faEye"></fa-icon>
+  </a>
+  
+  <ng-template #newModalTemplate>
+    <div class="modal-header clearfix">
+      <h4 class="modal-title float-left">Product Details</h4>
+      <button
+        type="button"
+        class="close float-right"
+        aria-label="Close"
+        (click)="newListCancelled()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="">
+        <p>{{product.id}}</p>
+        <p>{{product.name}}</p>
+        <p>{{product.model}}</p>
+        <p>{{product.number}}</p>
+        <p>{{product.address}}</p>
+      </div>
+     
+    </div>
+  
+    <div class="modal-footer">
+      <div class="text-right">
+        <button class="btn btn-secondary" (click)="newListCancelled()">
+          Close
+        </button>
+        &nbsp;
+       
+      </div>
+    </div>
+  </ng-template>
+  

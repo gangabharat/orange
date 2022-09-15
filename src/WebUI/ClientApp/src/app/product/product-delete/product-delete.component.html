@@ -1,0 +1,55 @@
+<a (click)="showModal(newModalTemplate)" class="text-danger">
+  <fa-icon [icon]="faTrash"></fa-icon>
+</a>
+
+<ng-template #newModalTemplate>
+  <div class="modal-header clearfix">
+    <h4 class="modal-title float-left">Delete Product ?</h4>
+    <button
+      type="button"
+      class="close float-right"
+      aria-label="Close"
+      (click)="newListCancelled()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="">
+      <p>
+        Are you sure you want to delete product <b>{{ product.name }} </b>? Your
+        product will also be deleted.
+      </p>
+
+      <p>To confirm deletion, click Delete button.</p>
+    </div>
+    <!-- <div class="">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="delete"
+        value=""
+        name="delete"
+        ngModel
+        required
+      />
+    </div> -->
+  </div>
+
+  <div class="modal-footer">
+    <div class="text-right">
+      <button class="btn btn-default" (click)="newListCancelled()">
+        Cancel
+      </button>
+      &nbsp;
+      <button class="btn btn-danger" (click)="onDelete()" [disabled]="loading">
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        <fa-icon [icon]="faTrash"></fa-icon>
+        Delete
+      </button>
+    </div>
+  </div>
+</ng-template>

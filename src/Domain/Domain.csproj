@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>orange.Domain</RootNamespace>
+    <AssemblyName>orange.Domain</AssemblyName>
+  </PropertyGroup>
+
+</Project>
